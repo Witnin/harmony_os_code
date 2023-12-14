@@ -37,8 +37,16 @@
       "value": "12vp"
     },
     {
+      "name": "vp_14",
+      "value": "14vp"
+    },
+    {
       "name": "vp_20",
       "value": "20vp"
+    },
+    {
+      "name": "vp_100",
+      "value": "100vp"
     }
   ]
 }

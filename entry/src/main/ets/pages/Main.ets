@@ -13,6 +13,11 @@ struct Main {
         Button(){
           Text($r('app.string.page_title'))
         }
+        .margin(
+          {
+            bottom: $r('app.float.vp_20')
+          }
+        )
         .width('50%')
         .onClick(()=>{
           router.pushUrl({
@@ -20,6 +25,15 @@ struct Main {
             params: {
               src: '待办事项',
             }
+          }, router.RouterMode.Single)
+        })
+        Button(){
+          Text('登陆页面')
+        }
+        .width('50%')
+        .onClick(()=>{
+          router.pushUrl({
+            url: 'pages/Login',
           }, router.RouterMode.Single)
         })
       }
