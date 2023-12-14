@@ -57,6 +57,8 @@ export default class CommonConstants {
    */
   static readonly COLUMN_SPACE: number = 16;
 
+  static readonly LOGIN_DELAY_TIME = 2000;
+
   /**
    * agents data.
    */

@@ -1,11 +1,27 @@
 import router from '@ohos.router'
+import CommonConstants from '../common/constant/CommonConstant';
 
 @Entry
 @Component
 struct Login {
-  @State message: string = 'Hello World'
+  @State isShowProgress: boolean = false;
   @State text: string = ''
+  private timeOutId: number = -1;
 
+  login():void{
+    this.isShowProgress = true;
+    if (this.timeOutId === -1) {
+      this.timeOutId = setTimeout(() => {
+        this.isShowProgress = false;
+        this.timeOutId = -1;
+        router.back();
+      }, CommonConstants.LOGIN_DELAY_TIME);
+    }
+  }
+  aboutToAppear(){
+    clearTimeout(this.timeOutId);
+    this.timeOutId = -1;
+  }
   build() {
     Column({
       space:5
@@ -63,12 +79,14 @@ struct Login {
         .fontWeight(FontWeight.Medium)
         .backgroundColor('#007DFF')
         .onClick(() => {
-          router.back()
+         this.login()
         })
-      LoadingProgress()
-        .color(Color.Blue)
-        .visibility(Visibility.Visible)
-        .height(40)
+      if (this.isShowProgress) {
+        LoadingProgress()
+          .color(Color.Blue)
+          .visibility(Visibility.Visible)
+          .height(40)
+      }
       Row(){
         Text("验证码登录")
         Text("忘记密码")
