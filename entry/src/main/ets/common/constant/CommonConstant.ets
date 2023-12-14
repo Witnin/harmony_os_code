@@ -60,6 +60,26 @@ export default class CommonConstants {
   static readonly LOGIN_DELAY_TIME = 2000;
 
   /**
+   * Title text of the home page
+   */
+  static readonly HOME_TITLE = '首页';
+
+  /**
+   * Title text of the setting page
+   */
+  static readonly MINE_TITLE = '我的';
+
+  /**
+   * Home tab index
+   */
+  static readonly HOME_TAB_INDEX = 0;
+
+  /**
+   * Mine tab index
+   */
+  static readonly MINE_TAB_INDEX = 1;
+
+  /**
    * agents data.
    */
   static readonly TODO_DATA: Array<string> = [

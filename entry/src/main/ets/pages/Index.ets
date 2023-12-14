@@ -46,7 +46,7 @@ struct Index {
       }, (item: string) => JSON.stringify(item))
     }.width(CommonConstants.FULL_LENGTH)
     .height(CommonConstants.FULL_LENGTH)
-    .backgroundColor($r('app.color.page_background'))
+    .backgroundColor($r('app.color.start_window_background'))
 
   }
 }
