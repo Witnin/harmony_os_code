@@ -22,6 +22,13 @@ export default class CommonConstants {
    */
   static readonly FULL_LENGTH: string = '100%';
 
+  static readonly percentage_20: string = '20%';
+  static readonly percentage_30: string = '30%';
+  static readonly percentage_42: string = '42%';
+  static readonly percentage_90: string = '90%';
+  static readonly percentage_98: string = '98%';
+
+
   /**
    * Title height.
    */
@@ -36,6 +43,11 @@ export default class CommonConstants {
    * Opacity of default.
    */
   static readonly OPACITY_DEFAULT: number = 1;
+
+  /**
+   * Common Spacing of Components
+   */
+  static readonly number_12 = 12;
 
   /**
    * Opacity of default.

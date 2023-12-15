@@ -1,5 +1,7 @@
 import router from '@ohos.router'
 import CommonConstants from '../common/constant/CommonConstant';
+import Home from '../view/Home';
+import Mine from '../view/Mine';
 @Entry
 @Component
 struct Main {
@@ -28,42 +30,18 @@ struct Main {
 
   build() {
     Tabs({
-      barPosition: BarPosition.End,
+      barPosition: BarPosition.Start,
       controller: this.tabsController
     }){
       TabContent() {
-            Button(){
-              Text($r('app.string.page_title'))
-            }
-            .margin(
-              {
-                bottom: $r('app.float.vp_20')
-              }
-            )
-            .width('50%')
-            .onClick(()=>{
-              router.pushUrl({
-                url: 'pages/Index',
-                params: {
-                  src: '待办事项',
-                }
-              }, router.RouterMode.Single)
-            })
+        Home()
       }
       .padding({ left: $r('app.float.vp_14'), right: $r('app.float.vp_14') })
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
       .tabBar(this.TabBuilder(CommonConstants.HOME_TITLE, CommonConstants.HOME_TAB_INDEX,
         $r('app.media.home_selected'), $r('app.media.home_normal')))
       TabContent() {
-            Button(){
-              Text('登陆页面')
-            }
-            .width('50%')
-            .onClick(()=>{
-              router.pushUrl({
-                url: 'pages/Login',
-              }, router.RouterMode.Single)
-            })
+        Mine()
       }
       .padding({ left: $r('app.float.vp_14'), right: $r('app.float.vp_14') })
       .backgroundColor($r('app.color.mainPage_backgroundColor'))
@@ -72,17 +50,11 @@ struct Main {
     }
     .width(CommonConstants.FULL_LENGTH)
     .backgroundColor(Color.White)
-    .barHeight($r('app.float.vp_56'))
+    .barHeight($r('app.float.vp_100'))
     .barMode(BarMode.Fixed)
+    .vertical(true)
     .onChange((index: number) => {
       this.currentIndex = index;
     })
-    // Row() {
-    //   Column() {
-    //     Text(this.message)
-    //       .fontSize(50)
-    //       .fontWeight(FontWeight.Bold)
-    // }
-    // .height('100%')
   }
 }
