@@ -20,11 +20,8 @@ struct Index {
           .onClick(()=>{
           router.back();
         })
-          .autoResize(true)
-          .objectFit(ImageFit.Contain)
           .margin({
-            left:$r('app.float.margin_12'),
-            right:$r('app.float.margin_12'),
+            right: $r('app.float.vp_32'),
             top: $r('app.float.title_margin_top'),
             bottom: $r('app.float.title_margin_bottom')
           })
